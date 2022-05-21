@@ -14,7 +14,7 @@ let read = new Promise((resolve, reject) => {
         }
     })
 })
-
+let res ;
 async function main(){
     let num = await read;
     axios.get('https://www.twse.com.tw/exchangeReport/STOCK_DAY', {
@@ -32,5 +32,6 @@ async function main(){
                   console.error(e);
                 });
 }
+
 
 main();
