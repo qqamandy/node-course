@@ -38,7 +38,7 @@ app.get("/stocks", async (req, res, next) => {
 app.get("/stocks/:stockId", async (req, res, next) => {
   // 取得網址上的參數 req.params
   // req.params.stockId
-  console.log("get stocks by id", req.params);
+  console.log("get stocks by id", req.params.stockId);
   // let [data, fields] = await pool.execute(
   //   "SELECT * FROM stock_prices WHERE stock_id = ?",
   //   [req.params.stockId]
@@ -47,7 +47,7 @@ app.get("/stocks/:stockId", async (req, res, next) => {
 
   //1. 取得目前在第幾頁
   let page = req.query.page || 1;
-  console.log("current page = ", page);
+  console.log("current page  = ", page);
 
   //2. 取得目前總筆數
   let [allResults, fields] = await pool.execute(

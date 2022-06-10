@@ -7,6 +7,7 @@ const Stock = () => {
 
   useEffect(() => {
     let getStocks = async () => {
+      // 網址應該要長這樣但是換一個寫法如下http://localhost:3001/stocks/2330?page=1
       let response = await axios.get("http://localhost:3001/stocks/");
       setStocks(response.data);
     };
